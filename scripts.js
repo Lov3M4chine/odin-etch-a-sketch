@@ -4,6 +4,9 @@ const gridContainer = document.querySelector('.grid-container');
 
 //establish starting grid
 function startingGrid () {
+    gridContainer.style.gridTemplateColumns = 'repeat(${dimensions}, 1fr)';
+    gridContainer.style.gridTemplateRows = `repeat(${dimensions}, 1fr)`;
+
     for (let i = 0; i < dimensions; i++) {
         for (let j =0; j < dimensions; j++) {
             const gridDiv = document.createElement('div');
