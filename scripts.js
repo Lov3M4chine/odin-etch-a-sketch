@@ -6,6 +6,9 @@ const setGridButton = document.getElementById('set-grid-button');
 
 //establish starting grid
 function setGrid () {
+    if (dimensions > 100) {
+        dimensions = 100;
+    }
     gridContainer.style.gridTemplateColumns = `repeat(${dimensions}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${dimensions}, 1fr)`;
 
