@@ -2,12 +2,13 @@ let dimensions = 16;
 let isMouseDown = false;
 const gridContainer = document.querySelector('.grid-container');
 const clearButton = document.getElementById('clear-button');
+const setGridButton = document.getElementById('set-grid-button');
 
 clearButton.addEventListener('click', clear);
 
 
 //establish starting grid
-function startingGrid () {
+function setGrid () {
     gridContainer.style.gridTemplateColumns = `repeat(${dimensions}, 1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${dimensions}, 1fr)`;
 
@@ -20,7 +21,7 @@ function startingGrid () {
     }
 }
 
-startingGrid ();
+setGrid ();
 
 //change grid colors when mouse is dragged over
 function changeGridColor () {
@@ -58,4 +59,9 @@ function clear () {
 
 
 //grid button should ask how big grid should be
-//user-defined grid should be established
+function dimensionPrompt () {
+    dimensions = parseInt(prompt("Enter your desired dimensions - maximum 100 (ex. 5 would be a grid 5x5)"));
+    setGrid();
+}
+
+setGridButton.addEventListener("click", dimensionPrompt);
