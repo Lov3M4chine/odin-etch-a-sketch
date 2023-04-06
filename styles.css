@@ -17,3 +17,20 @@
 .activated {
     background-color: white
 }
+
+.button-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    gap: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    font-size: 24px;
+}
