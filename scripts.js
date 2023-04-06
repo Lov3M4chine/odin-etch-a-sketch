@@ -1,6 +1,9 @@
 let dimensions = 16;
 let isMouseDown = false;
 const gridContainer = document.querySelector('.grid-container');
+const clearButton = document.getElementById('clear-button');
+
+clearButton.addEventListener('click', clear);
 
 
 //establish starting grid
@@ -18,6 +21,7 @@ function startingGrid () {
 }
 
 startingGrid ();
+
 //change grid colors when mouse is dragged over
 function changeGridColor () {
     document.addEventListener('mousedown', function () {
@@ -43,6 +47,15 @@ function changeGridColor () {
 }
 
 changeGridColor ();
+
 //clear button should clear sketch
+function clear () {
+    const gridDiv = document.querySelectorAll('.grid-block');
+    gridDiv.forEach(block => {
+        block.classList.remove('activated');
+    });
+}
+
+
 //grid button should ask how big grid should be
 //user-defined grid should be established
